@@ -108,7 +108,7 @@ body{font-family:'Inter',sans-serif;background:#fff;color:#111;padding:0;}
 //  👇 COLE AQUI O LINK DA SUA PLANILHA DO GOOGLE SHEETS
 //  Arquivo → Compartilhar → Publicar na web → aba "Artigos" → CSV
 // ================================================================
-const GOOGLE_SHEETS_URL = "COLE_SEU_LINK_AQUI";
+const GOOGLE_SHEETS_URL = "1lc7L6h4QH9ZXSJr36x7AMqBJ26E5VfGIE40mg-TORfM";
 // ================================================================
 
 function calSVG(){
@@ -196,7 +196,7 @@ function renderDestaques(artigos){
 }
 
 async function carregar(){
-  if(GOOGLE_SHEETS_URL === "COLE_SEU_LINK_AQUI"){
+  if(GOOGLE_SHEETS_URL === "1lc7L6h4QH9ZXSJr36x7AMqBJ26E5VfGIE40mg-TORfM"){
     document.getElementById('artigos-grid').innerHTML = '<div class="vazio"><div class="vazio-icon">⚙️</div><p>Configure o link da planilha no código HTML.</p></div>';
     document.getElementById('destaques-grid').innerHTML = '';
     return;
