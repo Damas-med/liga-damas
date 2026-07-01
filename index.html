@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ligas Acadêmicas – DAMAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="banner">
+  <div class="banner-esquerda">
+    <img src="brasao.png" alt="Brasão DAMAS" class="banner-logo-img">
+    <div>
+      <div class="banner-logo-nome">Diretório Acadêmico de Medicina</div>
+      <div class="banner-logo-sub">DR. ALEXANDRE SALES · ASCES-UNITA</div>
+    </div>
+  </div>
+  <div class="banner-centro">
+    <h1 class="banner-titulo">Ligas <span>Acadêmicas</span></h1>
+    <p class="banner-desc">Planeje-se, participe e transforme sua jornada acadêmica nas ligas do DAMAS.</p>
+  </div>
+  <div class="banner-card">
+    <div class="banner-card-icon">🏆</div>
+    <div>
+      <div class="banner-card-titulo">Encontre sua liga!</div>
+      <div class="banner-card-sub">Confira as ligas com processo seletivo aberto.</div>
+      <button class="banner-card-btn" onclick="ciclarStatus()">Ver seleção aberta →</button>
+    </div>
+  </div>
+</header>
+
+<!-- BENEFÍCIOS -->
+<div class="beneficios">
+  <div class="beneficio">
+    <div class="beneficio-icon">🤝</div>
+    <div>
+      <div class="beneficio-titulo">Integração</div>
+      <div class="beneficio-sub">Conecte-se com colegas e professores</div>
+    </div>
+  </div>
+  <div class="beneficio">
+    <div class="beneficio-icon">📚</div>
+    <div>
+      <div class="beneficio-titulo">Aprofundamento</div>
+      <div class="beneficio-sub">Explore áreas e desenvolva habilidades</div>
+    </div>
+  </div>
+  <div class="beneficio">
+    <div class="beneficio-icon">🔬</div>
+    <div>
+      <div class="beneficio-titulo">Pesquisa e Extensão</div>
+      <div class="beneficio-sub">Projetos que transformam a vida</div>
+    </div>
+  </div>
+  <div class="beneficio">
+    <div class="beneficio-icon">❤️</div>
+    <div>
+      <div class="beneficio-titulo">Impacto</div>
+      <div class="beneficio-sub">Atue na comunidade e faça a diferença</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEÇÃO PRINCIPAL -->
+<section class="ligas-section">
+
+  <!-- BUSCA -->
+  <div class="busca-row">
+    <div class="busca-wrap">
+      <span class="busca-icon">🔍</span>
+      <input class="busca-input" id="busca-input" type="text" placeholder="Buscar liga ou área de interesse..." oninput="filtrar()">
+    </div>
+    <button class="btn-filtros" id="btn-filtros" onclick="ciclarStatus()">
+      ⚙️ Status: <span id="label-status">Todos</span>
+    </button>
+  </div>
+
+  <!-- PILLS DE ÁREA -->
+  <div class="areas-row">
+    <button class="area-pill ativa" onclick="filtrarArea(this,'')">Todas as áreas</button>
+    <button class="area-pill" onclick="filtrarArea(this,'Clínicas Médicas')">Clínicas Médicas</button>
+    <button class="area-pill" onclick="filtrarArea(this,'Cirúrgicas')">Cirúrgicas</button>
+    <button class="area-pill" onclick="filtrarArea(this,'Pediatria')">Pediatria</button>
+    <button class="area-pill" onclick="filtrarArea(this,'Saúde Coletiva')">Saúde Coletiva</button>
+    <button class="area-pill" onclick="filtrarArea(this,'Diagnóstico e Apoio')">Diagnóstico e Apoio</button>
+  </div>
+
+  <!-- GRID DE CARDS -->
+  <div class="ligas-grid" id="ligas-grid">
+    <div class="loading-wrap">
+      <div class="spinner"></div>
+      <span>Carregando ligas...</span>
+    </div>
+  </div>
+
+  <!-- VER TODAS -->
+  <div class="ver-todas-wrap" id="ver-todas-wrap" style="display:none">
+    <button class="btn-ver-todas" onclick="verTodas()">Ver todas as ligas ↓</button>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<div class="cta-outer">
+  <div class="cta-section">
+    <div class="cta-brasao"><img src="brasao.png" alt="DAMAS"></div>
+    <div class="cta-texto">
+      <div class="cta-titulo">Faça parte de algo maior</div>
+      <div class="cta-desc">As ligas acadêmicas são espaços de crescimento, troca e realização. Encontre seu lugar e faça parte dessa história!</div>
+    </div>
+    <button class="cta-btn" onclick="document.getElementById('busca-input').focus();document.getElementById('busca-input').scrollIntoView({behavior:'smooth'})">Saiba como participar</button>
+  </div>
+</div>
+
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)fecharModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="fecharModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
